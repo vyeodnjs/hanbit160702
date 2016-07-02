@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class CalcActivity extends Activity implements View.OnClickListener{
     EditText et1,et2;
-    Button btPlus,btMinus,btMulti,btDivide;
+    Button btPlus,btMinus,btMulti,btDivide,btHome;
     TextView tvResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,20 +21,17 @@ public class CalcActivity extends Activity implements View.OnClickListener{
         btMinus = (Button) findViewById(R.id.btMinus);
         btMulti = (Button) findViewById(R.id.btMulti);
         btPlus = (Button) findViewById(R.id.btPlus);
-
+        btHome = (Button) findViewById(R.id.btHome);
         et1 = (EditText) findViewById(R.id.et1);
         et2 = (EditText) findViewById(R.id.et2);
-
         tvResult = (TextView) findViewById(R.id.tvResult);
+        btHome.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btHome :
                 this.startActivity(new Intent(this,MainActivity.class));
-                break;
-            case R.id.btCalendar :
-                this.startActivity(new Intent(this,CalendarActivity.class));
                 break;
         }
     }
